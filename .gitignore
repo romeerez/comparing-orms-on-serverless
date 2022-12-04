@@ -1,0 +1,7 @@
+.idea
+orchid-orm/.vercel
+orchid-orm/.env
+orchid-orm/node_modules
+prisma/.vercel
+prisma/.env
+prisma/node_modules
