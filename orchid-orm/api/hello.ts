@@ -2,11 +2,6 @@ import { orchidORM, createModel } from 'orchid-orm';
 import { columnTypes } from "pqb";
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-const databaseURL = process.env.DATABASE_URL
-if (!databaseURL) {
-  throw new Error('DATABASE_URL is missing')
-}
-
 const Model = createModel({
   columnTypes,
 });
@@ -21,7 +16,7 @@ class User extends Model {
 }
 
 const db = orchidORM({
-  connectionString: databaseURL,
+  connectionString: process.env.DATABASE_URL,
   ssl: true,
 }, {
   user: User
